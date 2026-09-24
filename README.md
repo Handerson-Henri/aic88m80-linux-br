@@ -28,7 +28,31 @@ lsusb
 
 Este guia destina-se ao dispositivo identificado acima. Para outros adaptadores, identifique o chipset antes de instalar.
 
-## Instalação assistida
+## Pacote .deb (assistente)
+
+[Baixe o pacote aic88m80-linux-br_0.1.0_all.deb](https://github.com/Handerson-Henri/aic88m80-linux-br/raw/refs/heads/main/aic88m80-linux-br_0.1.0_all.deb).
+
+Abra o arquivo com o instalador de aplicativos do sistema. Se preferir o Terminal, na pasta do download:
+
+```bash
+sudo apt install ./aic88m80-linux-br_0.1.0_all.deb
+```
+
+Depois abra **AIC 88M80 — Instalar Wi-Fi e Bluetooth** no menu. Escolha **1**, confirme com `sim` e informe a senha quando solicitada. O terminal mostra o progresso. A opção **2** executa somente o diagnóstico.
+
+O .deb instala o assistente. O download e a compilação do driver começam ao abrir o atalho; não ocorrem durante a instalação do pacote, para evitar conflito com o gerenciador de pacotes. Precisa de internet. Driver e firmware não estão incluídos. A senha é solicitada pelo sudo, não armazenada pelo assistente.
+
+Remover o pacote com `sudo apt remove aic88m80-linux-br` remove apenas o assistente. O driver instalado pelo projeto original permanece; consulte o projeto original para removê-lo.
+
+Para reconstruir o pacote a partir deste código:
+
+```bash
+bash build-deb.sh
+```
+
+O resultado fica em `dist/`. O pacote teve sua estrutura e seus scripts verificados, mas a instalação completa por este novo assistente ainda não foi testada. A instalação original do driver foi confirmada no ambiente descrito acima.
+
+## Instalação assistida pelo código-fonte
 
 Baixe este repositório e abra um Terminal na pasta extraída. Execute:
 
